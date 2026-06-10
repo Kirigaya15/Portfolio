@@ -27,13 +27,10 @@ export default function Home() {
     title: string;
     source: string;
   } | null>(null);
-  const [portfolioData, setPortfolioData] = useState(defaultPortfolioData);
+  const [portfolioData, setPortfolioData] = useState<typeof defaultPortfolioData | null>(null);
   const [adminClicks, setAdminClicks] = useState(0);
   const [profileTilt, setProfileTilt] = useState({ rotateX: 0, rotateY: 0, x: 0, y: 0 });
-  const projects = portfolioData.projects;
-  const certificates = portfolioData.certificates;
-
-  useEffect(() => {
+useEffect(() => {
     let isMounted = true;
 
     const loadData = async () => {
@@ -85,19 +82,26 @@ export default function Home() {
       y: y * 12,
     });
   };
+  if (!portfolioData) {
+    return <div className="min-h-screen" aria-hidden="true" />;
+  }
+
+  const activePortfolioData = portfolioData;
+  const projects = activePortfolioData.projects;
+  const certificates = activePortfolioData.certificates;
 
   return (
     <div
       className="mx-auto flex max-w-5xl flex-col gap-16 pb-16 sm:gap-20 sm:pb-20 lg:gap-24"
-      style={{ fontFamily: fontStacks[portfolioData.fontFamily] ?? fontStacks.Inter }}
+      style={{ fontFamily: fontStacks[activePortfolioData.fontFamily] ?? fontStacks.Inter }}
     >
       {/* Hero Section */}
       <section className="relative flex min-h-[38vh] flex-col items-center justify-center overflow-hidden px-4 py-16 text-center sm:min-h-[42vh] sm:py-20">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_12%,rgba(34,211,238,0.16),transparent_24rem)]" />
         <EditedHeroText
-          intro={portfolioData.hero.intro}
-          highlight={portfolioData.hero.highlight}
-          description={portfolioData.hero.description}
+          intro={activePortfolioData.hero.intro}
+          highlight={activePortfolioData.hero.highlight}
+          description={activePortfolioData.hero.description}
         />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -120,8 +124,8 @@ export default function Home() {
           <div>
             <h2 className="mb-7 text-4xl font-extrabold text-cyan-50 sm:text-5xl">About Me</h2>
             <div className="max-w-3xl space-y-4 text-base leading-8 text-cyan-50/78 sm:text-lg">
-              <p>{portfolioData.about.paragraphOne}</p>
-              <p>{portfolioData.about.paragraphTwo}</p>
+              <p>{activePortfolioData.about.paragraphOne}</p>
+              <p>{activePortfolioData.about.paragraphTwo}</p>
             </div>
           </div>
 
@@ -134,7 +138,7 @@ export default function Home() {
             className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-2xl bg-slate-900 shadow-[0_0_60px_rgba(34,211,238,0.12)] lg:max-w-md"
           >
             <motion.img
-              src={portfolioData.hero.profileImage || "/profile.png"}
+              src={activePortfolioData.hero.profileImage || "/profile.png"}
               alt="Profile portrait"
               className="h-full w-full object-cover"
               animate={{ scale: profileTilt.x || profileTilt.y ? 1.04 : 1 }}
@@ -354,18 +358,18 @@ export default function Home() {
 
             {/* Resume Icon */}
             <motion.a
-              href={portfolioData.contact.resumeUrl || undefined}
-              target={portfolioData.contact.resumeUrl ? "_blank" : undefined}
-              rel={portfolioData.contact.resumeUrl ? "noopener noreferrer" : undefined}
+              href={activePortfolioData.contact.resumeUrl || undefined}
+              target={activePortfolioData.contact.resumeUrl ? "_blank" : undefined}
+              rel={activePortfolioData.contact.resumeUrl ? "noopener noreferrer" : undefined}
               whileHover={{ scale: 1.05, y: -5 }}
               whileTap={{ scale: 0.95 }}
               onClick={(event) => {
-                if (!portfolioData.contact.resumeUrl) {
+                if (!activePortfolioData.contact.resumeUrl) {
                   event.preventDefault();
                 }
               }}
               className="flex flex-col items-center gap-4 cursor-pointer group"
-              aria-label={portfolioData.contact.resumeUrl ? "Open resume" : "Resume link not set"}
+              aria-label={activePortfolioData.contact.resumeUrl ? "Open resume" : "Resume link not set"}
             >
               <div className="w-20 h-20 rounded-full bg-gray-100 dark:bg-[#161b26] flex items-center justify-center border border-gray-200 dark:border-gray-800/80 group-hover:border-fuchsia-500/50 transition-colors shadow-inner">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-gray-700 dark:text-gray-300 group-hover:text-fuchsia-400 transition-colors">
@@ -381,7 +385,7 @@ export default function Home() {
 
             {/* Facebook Icon */}
             <motion.a
-              href={portfolioData.contact.facebookUrl}
+              href={activePortfolioData.contact.facebookUrl}
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05, y: -5 }}
@@ -405,7 +409,7 @@ export default function Home() {
       <EmailModal
         isOpen={isEmailModalOpen}
         onClose={() => setIsEmailModalOpen(false)}
-        email={portfolioData.contact.email}
+        email={activePortfolioData.contact.email}
       />
 
       {selectedCertificate && (
