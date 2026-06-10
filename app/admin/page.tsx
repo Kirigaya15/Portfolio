@@ -185,10 +185,11 @@ export default function AdminPage() {
 
     try {
       await persistData(safeData);
-    } catch {
+    } catch (error) {
       safeSetBrowserBackup(safeData);
       setData(safeData);
-      setSaveError("Database save failed. Browser backup may be too large for uploaded images.");
+      const message = error instanceof Error ? error.message : "Database save failed.";
+      setSaveError(`Database save failed: ${message}`);
     }
   };
 

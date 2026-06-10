@@ -11,7 +11,7 @@ const dataDirectory = path.join(process.cwd(), "data");
 const dataFile = path.join(dataDirectory, "portfolio.json");
 const blobDataPath = "portfolio/portfolio.json";
 
-const hasBlobStorage = () => Boolean(process.env.BLOB_READ_WRITE_TOKEN || process.env.BLOB_STORE_ID);
+const hasBlobStorage = () => Boolean(process.env.BLOB_READ_WRITE_TOKEN);
 
 async function readPortfolioBlob(): Promise<PortfolioData | null> {
   if (!hasBlobStorage()) {
@@ -86,9 +86,11 @@ export async function POST(request: Request) {
     await writePortfolioFile(data);
 
     return NextResponse.json({ ok: true, data });
-  } catch {
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "Unable to save portfolio data.";
+
     return NextResponse.json(
-      { ok: false, message: "Unable to save portfolio data." },
+      { ok: false, message },
       { status: 500 }
     );
   }

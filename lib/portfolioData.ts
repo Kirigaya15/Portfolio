@@ -193,7 +193,8 @@ export async function savePortfolioDataToDatabase(data: PortfolioData): Promise<
   });
 
   if (!response.ok) {
-    throw new Error("Unable to save portfolio database.");
+    const result = (await response.json().catch(() => null)) as { message?: string } | null;
+    throw new Error(result?.message || "Unable to save portfolio database.");
   }
 
   const result = (await response.json()) as { data?: Partial<PortfolioData> };
