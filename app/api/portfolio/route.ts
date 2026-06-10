@@ -70,6 +70,10 @@ async function writePortfolioFile(data: PortfolioData) {
     return;
   }
 
+  if (process.env.VERCEL) {
+    throw new Error("Missing BLOB_READ_WRITE_TOKEN. Add it in Vercel Environment Variables, then redeploy.");
+  }
+
   await fs.mkdir(dataDirectory, { recursive: true });
   await fs.writeFile(dataFile, `${JSON.stringify(data, null, 2)}\n`, "utf8");
 }
