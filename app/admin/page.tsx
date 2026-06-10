@@ -108,6 +108,7 @@ const getStoredFileSource = async (
 export default function AdminPage() {
   const [data, setData] = useState<PortfolioData>(defaultPortfolioData);
   const [saved, setSaved] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
   const [password, setPassword] = useState("");
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [passwordError, setPasswordError] = useState("");
@@ -169,15 +170,22 @@ export default function AdminPage() {
 
   const persistData = async (nextData: PortfolioData) => {
     const safeData = normalizePortfolioData(nextData);
-    const savedData = await savePortfolioDataToDatabase(safeData);
-
-    safeSetBrowserBackup(savedData);
-    setData(savedData);
+    setIsSaving(true);
+    setSaved(false);
     setSaveError("");
-    setSaved(true);
-    window.setTimeout(() => setSaved(false), 1800);
 
-    return savedData;
+    try {
+      const savedData = await savePortfolioDataToDatabase(safeData);
+
+      safeSetBrowserBackup(savedData);
+      setData(savedData);
+      setSaved(true);
+      window.setTimeout(() => setSaved(false), 1800);
+
+      return savedData;
+    } finally {
+      setIsSaving(false);
+    }
   };
 
   const saveData = async () => {
@@ -392,8 +400,9 @@ export default function AdminPage() {
           <p className="text-xs font-bold uppercase tracking-[0.25em] text-cyan-300">Admin Panel</p>
           <h1 className="mt-2 text-4xl font-extrabold">Edit Portfolio</h1>
           <p className="mt-2 max-w-2xl text-sm text-cyan-100/65">
-            Changes save to the portfolio database file, with browser storage as backup.
+            Changes save to Vercel Blob when deployed, with browser storage as backup.
           </p>
+          {isSaving && <p className="mt-2 text-sm font-bold text-cyan-200">Saving changes...</p>}
           {saveError && <p className="mt-2 text-sm font-bold text-red-300">{saveError}</p>}
         </div>
         <div className="flex gap-3">
@@ -404,11 +413,19 @@ export default function AdminPage() {
           >
             View Site
           </a>
-          <button onClick={resetData} className="rounded-lg border border-red-300/30 px-4 py-2 text-sm font-bold text-red-200 hover:bg-red-400/10">
+          <button
+            onClick={resetData}
+            disabled={isSaving}
+            className="rounded-lg border border-red-300/30 px-4 py-2 text-sm font-bold text-red-200 hover:bg-red-400/10 disabled:cursor-not-allowed disabled:opacity-45"
+          >
             Reset
           </button>
-          <button onClick={saveData} className="rounded-lg bg-cyan-400 px-4 py-2 text-sm font-black text-slate-950 hover:bg-cyan-300">
-            {saved ? "Saved" : "Save"}
+          <button
+            onClick={saveData}
+            disabled={isSaving}
+            className="min-w-24 rounded-lg bg-cyan-400 px-4 py-2 text-sm font-black text-slate-950 hover:bg-cyan-300 disabled:cursor-wait disabled:opacity-70"
+          >
+            {isSaving ? "Saving..." : saved ? "Saved" : "Save"}
           </button>
         </div>
       </div>
