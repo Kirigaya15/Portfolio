@@ -217,6 +217,15 @@ export default function AdminPage() {
     setPassword("");
   };
 
+  const viewSite = () => {
+    if (isSaving) {
+      return;
+    }
+
+    window.sessionStorage.removeItem(adminSessionKey);
+    window.location.assign(`/?refresh=${Date.now()}`);
+  };
+
   const updateProject = (index: number, key: string, value: string) => {
     setData((current) => ({
       ...current,
@@ -406,13 +415,14 @@ export default function AdminPage() {
           {saveError && <p className="mt-2 text-sm font-bold text-red-300">{saveError}</p>}
         </div>
         <div className="flex gap-3">
-          <a
-            href="/"
-            onClick={lockAdmin}
-            className="rounded-lg border border-cyan-300/20 px-4 py-2 text-sm font-bold hover:bg-cyan-300/10"
+          <button
+            type="button"
+            onClick={viewSite}
+            disabled={isSaving}
+            className="rounded-lg border border-cyan-300/20 px-4 py-2 text-sm font-bold hover:bg-cyan-300/10 disabled:cursor-wait disabled:opacity-60"
           >
             View Site
-          </a>
+          </button>
           <button
             onClick={resetData}
             disabled={isSaving}

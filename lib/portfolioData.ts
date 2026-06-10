@@ -174,7 +174,7 @@ export function loadPortfolioData(): PortfolioData {
 }
 
 export async function loadPortfolioDataFromDatabase(): Promise<PortfolioData> {
-  const response = await fetch(portfolioApiPath, { cache: "no-store" });
+  const response = await fetch(`${portfolioApiPath}?ts=${Date.now()}`, { cache: "no-store" });
 
   if (!response.ok) {
     throw new Error("Unable to load portfolio database.");
