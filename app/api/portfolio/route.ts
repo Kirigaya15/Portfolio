@@ -9,26 +9,13 @@ export const dynamic = "force-dynamic";
 
 const dataDirectory = path.join(process.cwd(), "data");
 const dataFile = path.join(dataDirectory, "portfolio.json");
-const blobDataPath = "portfolio/portfolio.json";
+const legacyBlobDataPath = "portfolio/portfolio.json";
+const blobDataPrefix = "portfolio/snapshots/portfolio-";
 
 const hasBlobStorage = () => Boolean(process.env.BLOB_READ_WRITE_TOKEN);
 
-async function readPortfolioBlob(): Promise<PortfolioData | null> {
-  if (!hasBlobStorage()) {
-    return null;
-  }
-
-  const blobs = await list({
-    prefix: blobDataPath,
-    limit: 1,
-  });
-  const blob = blobs.blobs.find((item) => item.pathname === blobDataPath);
-
-  if (!blob) {
-    return null;
-  }
-
-  const response = await fetch(`${blob.url}?ts=${Date.now()}`, {
+async function fetchBlobJson(url: string): Promise<PortfolioData | null> {
+  const response = await fetch(`${url}?ts=${Date.now()}`, {
     cache: "no-store",
   });
 
@@ -39,12 +26,37 @@ async function readPortfolioBlob(): Promise<PortfolioData | null> {
   return normalizePortfolioData((await response.json()) as Partial<PortfolioData>);
 }
 
+async function readPortfolioBlob(): Promise<PortfolioData | null> {
+  if (!hasBlobStorage()) {
+    return null;
+  }
+
+  const snapshotBlobs = await list({
+    prefix: blobDataPrefix,
+    limit: 100,
+  });
+  const latestSnapshot = snapshotBlobs.blobs
+    .filter((item) => item.pathname.endsWith(".json"))
+    .sort((a, b) => b.uploadedAt.getTime() - a.uploadedAt.getTime())[0];
+
+  if (latestSnapshot) {
+    return fetchBlobJson(latestSnapshot.url);
+  }
+
+  const legacyBlobs = await list({
+    prefix: legacyBlobDataPath,
+    limit: 1,
+  });
+  const legacyBlob = legacyBlobs.blobs.find((item) => item.pathname === legacyBlobDataPath);
+
+  return legacyBlob ? fetchBlobJson(legacyBlob.url) : null;
+}
+
 async function writePortfolioBlob(data: PortfolioData) {
-  await put(blobDataPath, `${JSON.stringify(data, null, 2)}\n`, {
+  await put(`${blobDataPrefix}${Date.now()}.json`, `${JSON.stringify(data, null, 2)}\n`, {
     access: "public",
-    addRandomSuffix: false,
-    allowOverwrite: true,
-    cacheControlMaxAge: 60,
+    addRandomSuffix: true,
+    cacheControlMaxAge: 0,
     contentType: "application/json",
   });
 }
