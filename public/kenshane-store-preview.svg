@@ -1,0 +1,75 @@
+<svg width="1366" height="632" viewBox="0 0 1366 632" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1366" height="632" fill="#C90000"/>
+  <rect width="1366" height="58" fill="#850000"/>
+  <text x="20" y="37" fill="white" font-family="Arial, sans-serif" font-size="25" font-weight="800">KenShane Store</text>
+  <text x="1224" y="34" fill="white" font-family="Arial, sans-serif" font-size="16">Login as Admin</text>
+  <g opacity="0.85">
+    <circle cx="1095" cy="143" r="29" fill="url(#gold)"/>
+    <rect x="1093" y="58" width="3" height="58" fill="#D79B26"/>
+    <circle cx="1112" cy="236" r="31" fill="url(#gold)"/>
+    <rect x="1110" y="58" width="3" height="148" fill="#D79B26"/>
+    <circle cx="1285" cy="335" r="65" fill="url(#gold)"/>
+    <rect x="1282" y="58" width="5" height="212" fill="#D79B26"/>
+    <path d="M1209 185l13 28 30-1-23 19 10 29-25-16-25 17 8-30-24-18 30-1 6-27z" fill="url(#gold)"/>
+    <path d="M1124 358l10 33 35-1-29 19 12 32-28-20-27 21 10-33-28-18 34-1 11-32z" fill="#F6D36B"/>
+  </g>
+  <g opacity="0.95">
+    <path d="M914 0c40 20 74 40 108 67 26-26 57-49 94-67h-202z" fill="#0E5D2A"/>
+    <path d="M955 0c21 45 48 82 86 112 33-38 64-76 94-112H955z" fill="#1D7A3A"/>
+    <path d="M1006 0l79 160 39-160h-118z" fill="#2E8F4A"/>
+    <path d="M1177 0c36 55 78 103 128 144l28-144h-156z" fill="#0E5D2A"/>
+    <path d="M1234 0l132 182V0h-132z" fill="#2B8B48"/>
+    <path d="M983 41l85 122-61 1-72-95 48-28z" fill="#F3F4F6"/>
+    <path d="M1016 30l88 110-36 25-88-110 36-25z" fill="#E11D1D"/>
+  </g>
+  <g opacity="0.95">
+    <path d="M0 409c36 77 74 139 119 191L0 632V409z" fill="#0E5D2A"/>
+    <path d="M36 632c55-31 112-54 176-70L165 632H36z" fill="#1D7A3A"/>
+    <path d="M0 620c83-26 169-26 257 12H0v-12z" fill="#2E8F4A"/>
+    <path d="M103 577l98-28M143 530l20 96M124 550l57 54M188 567l-80 29" stroke="#F3D07A" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="35" cy="595" r="30" fill="#7A3E18"/>
+    <circle cx="337" cy="618" r="22" fill="#7A3E18"/>
+  </g>
+  <g opacity="0.78">
+    <circle cx="196" cy="3" r="4" fill="white"/>
+    <circle cx="240" cy="25" r="5" fill="white"/>
+    <circle cx="677" cy="26" r="5" fill="white"/>
+    <circle cx="870" cy="8" r="5" fill="white"/>
+    <circle cx="1269" cy="118" r="4" fill="white"/>
+    <circle cx="1288" cy="194" r="5" fill="white"/>
+    <circle cx="173" cy="194" r="5" fill="white"/>
+    <circle cx="724" cy="4" r="4" fill="white"/>
+    <circle cx="808" cy="25" r="5" fill="white"/>
+    <circle cx="255" cy="492" r="2" fill="white"/>
+    <circle cx="186" cy="508" r="2" fill="white"/>
+    <circle cx="203" cy="484" r="2" fill="white"/>
+    <circle cx="954" cy="403" r="2" fill="white"/>
+    <circle cx="1050" cy="286" r="2" fill="white"/>
+    <circle cx="1101" cy="331" r="2" fill="white"/>
+    <circle cx="984" cy="199" r="1.5" fill="white"/>
+    <circle cx="940" cy="167" r="1.8" fill="white"/>
+    <circle cx="805" cy="137" r="1" fill="white"/>
+    <circle cx="762" cy="94" r="1.8" fill="white"/>
+    <circle cx="68" cy="392" r="2" fill="white"/>
+    <circle cx="36" cy="365" r="1.8" fill="white"/>
+    <circle cx="11" cy="368" r="2.3" fill="white"/>
+  </g>
+  <rect x="463" y="178" width="441" height="316" rx="8" fill="#8A0000"/>
+  <rect x="463" y="178" width="441" height="316" rx="8" fill="black" opacity="0.08"/>
+  <text x="591" y="240" fill="white" font-family="Arial, sans-serif" font-size="25" font-weight="800">Customer Login</text>
+  <rect x="483" y="276" width="402" height="36" rx="5" fill="white"/>
+  <text x="484" y="298" fill="#64748B" font-family="Arial, sans-serif" font-size="14">Email</text>
+  <rect x="483" y="333" width="402" height="36" rx="5" fill="white"/>
+  <text x="484" y="355" fill="#64748B" font-family="Arial, sans-serif" font-size="14">Password</text>
+  <rect x="483" y="380" width="400" height="42" rx="4" fill="#009400"/>
+  <text x="661" y="406" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="700">Login</text>
+  <text x="549" y="451" fill="white" font-family="Arial, sans-serif" font-size="16">Don't have an account?</text>
+  <text x="722" y="451" fill="#0000EE" font-family="Arial, sans-serif" font-size="16" text-decoration="underline">Sign up here.</text>
+  <defs>
+    <radialGradient id="gold" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1092 127) rotate(55) scale(72)">
+      <stop stop-color="#FFF4B0"/>
+      <stop offset="0.43" stop-color="#D6A23A"/>
+      <stop offset="1" stop-color="#8C5B16"/>
+    </radialGradient>
+  </defs>
+</svg>

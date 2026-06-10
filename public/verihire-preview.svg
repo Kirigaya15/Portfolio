@@ -1,0 +1,56 @@
+<svg width="1366" height="632" viewBox="0 0 1366 632" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1366" height="632" fill="#FFF9F1"/>
+  <circle cx="1349" cy="245" r="149" fill="#FFE5BD"/>
+  <rect x="118" y="27" width="40" height="40" rx="12" fill="#FF9500"/>
+  <path d="M138 38l12 4v9c0 8-5 12-12 15-7-3-12-7-12-15v-9l12-4z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M133 51l4 4 8-10" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="170" y="54" fill="#073047" font-family="Inter, Arial, sans-serif" font-size="23" font-weight="800">VeriHire</text>
+  <text x="118" y="121" fill="#073047" font-family="Inter, Arial, sans-serif" font-size="66" font-weight="900">Welcome to</text>
+  <text x="118" y="199" fill="#FF9500" font-family="Inter, Arial, sans-serif" font-size="66" font-weight="900">VeriHire</text>
+  <text x="118" y="262" fill="#6B7280" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="500">Detect fraudulent job posts with our AI-powered</text>
+  <text x="118" y="294" fill="#6B7280" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="500">verification system. Protect yourself from fake job</text>
+  <text x="118" y="326" fill="#6B7280" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="500">opportunities and scams.</text>
+  <rect x="119" y="369" width="544" height="127" rx="22" fill="white" stroke="#E5E7EB"/>
+  <rect x="151" y="401" width="480" height="63" rx="14" fill="#F8FAFC" stroke="#E5E7EB" stroke-width="2"/>
+  <rect x="477" y="401" width="154" height="63" rx="0" fill="#FF9500"/>
+  <path d="M617 401a14 14 0 0114 14v35a14 14 0 01-14 14H477v-63h140z" fill="#FF9500"/>
+  <text x="176" y="439" fill="#CBD5E1" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="700">Paste job posting URL here...</text>
+  <text x="511" y="437" fill="white" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="800">Verify Now</text>
+  <path d="M696 26h11v16h-11z" stroke="#FF9500" stroke-width="2" rx="2"/>
+  <path d="M699 31h5M699 36h5" stroke="#FF9500" stroke-width="2" stroke-linecap="round"/>
+  <text x="723" y="40" fill="#073047" font-family="Inter, Arial, sans-serif" font-size="23" font-weight="800">Manual Job Verification</text>
+  <g font-family="Inter, Arial, sans-serif">
+    <text x="689" y="77" fill="#073047" font-size="14" font-weight="800">Job Title</text>
+    <rect x="689" y="91" width="264" height="52" rx="12" fill="white" stroke="#E2E8F0" stroke-width="2"/>
+    <text x="705" y="123" fill="#CBD5E1" font-size="16" font-weight="700">e.g., Software Engineer</text>
+    <text x="969" y="77" fill="#073047" font-size="14" font-weight="800">Location</text>
+    <rect x="969" y="91" width="264" height="52" rx="12" fill="white" stroke="#E2E8F0" stroke-width="2"/>
+    <text x="986" y="123" fill="#CBD5E1" font-size="16" font-weight="700">e.g., New York, NY</text>
+    <text x="689" y="176" fill="#073047" font-size="14" font-weight="800">Salary</text>
+    <rect x="689" y="190" width="264" height="52" rx="12" fill="white" stroke="#E2E8F0" stroke-width="2"/>
+    <text x="705" y="222" fill="#CBD5E1" font-size="16" font-weight="700">e.g., 1k - 50k</text>
+    <text x="969" y="176" fill="#073047" font-size="14" font-weight="800">Department</text>
+    <rect x="969" y="190" width="264" height="52" rx="12" fill="white" stroke="#E2E8F0" stroke-width="2"/>
+    <text x="986" y="222" fill="#CBD5E1" font-size="16" font-weight="700">e.g., Engineering</text>
+    <text x="689" y="275" fill="#073047" font-size="14" font-weight="800">Benefits</text>
+    <rect x="689" y="289" width="264" height="52" rx="12" fill="white" stroke="#E2E8F0" stroke-width="2"/>
+    <text x="705" y="321" fill="#CBD5E1" font-size="16" font-weight="700">e.g., Health insurance, 401k</text>
+    <text x="969" y="275" fill="#073047" font-size="14" font-weight="800">Employment Type</text>
+    <rect x="969" y="289" width="264" height="52" rx="12" fill="white" stroke="#E2E8F0" stroke-width="2"/>
+    <text x="987" y="321" fill="#073047" font-size="16" font-weight="500">Select employment type</text>
+    <path d="M1207 311l6 7 6-7" stroke="#073047" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="689" y="374" fill="#073047" font-size="14" font-weight="800">Required Experience</text>
+    <rect x="689" y="388" width="264" height="52" rx="12" fill="white" stroke="#E2E8F0" stroke-width="2"/>
+    <text x="706" y="420" fill="#073047" font-size="16" font-weight="500">Select experience level</text>
+    <path d="M921 410l6 7 6-7" stroke="#073047" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="969" y="374" fill="#073047" font-size="14" font-weight="800">Required Education</text>
+    <rect x="969" y="388" width="264" height="52" rx="12" fill="white" stroke="#E2E8F0" stroke-width="2"/>
+    <text x="986" y="420" fill="#CBD5E1" font-size="16" font-weight="700">e.g., Bachelor's degree</text>
+    <text x="689" y="473" fill="#073047" font-size="14" font-weight="800">Industry</text>
+    <rect x="689" y="487" width="544" height="50" rx="11" fill="white" stroke="#E2E8F0" stroke-width="2"/>
+    <text x="705" y="519" fill="#CBD5E1" font-size="16" font-weight="700">e.g., Technology</text>
+    <text x="689" y="570" fill="#073047" font-size="14" font-weight="800">Job Function</text>
+    <rect x="689" y="584" width="544" height="50" rx="11" fill="white" stroke="#E2E8F0" stroke-width="2"/>
+    <text x="705" y="616" fill="#CBD5E1" font-size="16" font-weight="700">e.g., Software Development</text>
+  </g>
+</svg>

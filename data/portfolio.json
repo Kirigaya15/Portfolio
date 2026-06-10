@@ -1,0 +1,95 @@
+{
+  "fontFamily": "Montserrat",
+  "hero": {
+    "intro": "Hi, I'm Marc Laurence Moralde",
+    "highlight": "",
+    "description": "I am an IT enthusiast passionate about technology, innovation, and continuous learning, always exploring new tools and solutions to solve real-world problems.",
+    "profileImage": "/profile-admin.png"
+  },
+  "about": {
+    "paragraphOne": "I explore, troubleshoot, and optimize technology solutions while continuously learning modern IT systems, networking, and technical support practices.",
+    "paragraphTwo": ""
+  },
+  "contact": {
+    "email": "marclaurence.moralde@hcdc.edu.ph",
+    "facebookUrl": "https://www.facebook.com/travismarc15",
+    "resumeUrl": "/Moralde-CV.pdf"
+  },
+  "projects": [
+    {
+      "title": "Kenshane Store",
+      "description": "An online store project with a login page and e-commerce style user flow.",
+      "theme": "store",
+      "tags": [
+        "PHP",
+        "Web Store",
+        "Login System"
+      ],
+      "url": "https://kenshanestore.42web.io/login.php",
+      "image": "/kenshane-store-preview.svg"
+    },
+    {
+      "title": "VeriHire",
+      "description": "A real or fake job prediction web app that helps users check job posting credibility.",
+      "theme": "verihire",
+      "tags": [
+        "AI Detection",
+        "React",
+        "UX Research"
+      ],
+      "url": "https://verihire.onrender.com/",
+      "image": "/verihire-preview.svg"
+    }
+  ],
+  "certificates": [
+    {
+      "title": "New Certificate",
+      "issuer": "Issuer name",
+      "date": "",
+      "url": "/uploads/certificate-files/Free-Full-Stack-Developer-Course.pdf",
+      "image": "/uploads/certificate-files/Free-Full-Stack-Developer-Course.pdf"
+    },
+    {
+      "title": "New Certificate",
+      "issuer": "Issuer name",
+      "date": "",
+      "url": "/uploads/certificate-files/Introduction-to-Front-End-Development.pdf",
+      "image": "/uploads/certificate-files/Introduction-to-Front-End-Development.pdf"
+    },
+    {
+      "title": "New Certificate",
+      "issuer": "Issuer name",
+      "date": "",
+      "url": "/uploads/certificate-files/Introduction-to-SQL.pdf",
+      "image": "/uploads/certificate-files/Introduction-to-SQL.pdf"
+    },
+    {
+      "title": "New Certificate",
+      "issuer": "Issuer name",
+      "date": "",
+      "url": "/uploads/certificate-files/introduction-to-cybersecurity.pdf",
+      "image": "/uploads/certificate-files/introduction-to-cybersecurity.pdf"
+    },
+    {
+      "title": "New Certificate",
+      "issuer": "Issuer name",
+      "date": "",
+      "url": "/uploads/certificate-files/MySql.pdf",
+      "image": "/uploads/certificate-files/MySql.pdf"
+    },
+    {
+      "title": "New Certificate",
+      "issuer": "Issuer name",
+      "date": "",
+      "url": "/uploads/certificate-files/PHp-MySQL.pdf",
+      "image": "/uploads/certificate-files/PHp-MySQL.pdf"
+    },
+    {
+      "title": "New Certificate",
+      "issuer": "Issuer name",
+      "date": "",
+      "url": "/uploads/certificate-files/python-essentials-1.pdf",
+      "image": "/uploads/certificate-files/python-essentials-1.pdf"
+    }
+  ]
+}
